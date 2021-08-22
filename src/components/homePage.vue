@@ -1,8 +1,9 @@
 <template>
   <section id="mainpage" class="hero is-fullheight is-primary">
     <!-- Background -->
-    <div class="hero-video is-transparent" style="filter: blur(8px)">
-      <video src="../assets/Backround/GOBO.v2.mp4" autoplay muted loop></video>
+    <div class="hero-video is-transparent">
+      <img src="../assets/Backround/image/BA_Shiroko.jpg" style="filter: blur(2px)" alt="background image">
+      <video :class="{showVideoBackground: isVidBgLoad}" id="vidBg" src="../assets/Backround/GOBO.v2.mp4" autoplay muted loop style="filter: blur(8px)"></video>
     </div>
     <!-- Navigation Bar -->
     <div class="hero-head">
@@ -50,8 +51,29 @@ export default {
   components: {
     Navigation
   },
+  data() {
+    return {
+      isVidBgLoad: false
+    }
+  },
+  mounted() {
+    const vidElement = document.getElementById('vidBg');
+    vidElement.addEventListener('loadeddata', () => {
+      if(vidElement.readyState > 3) {
+        this.isVidBgLoad = true
+      }
+    });
+  }
 }
 </script>
 
 <style scoped>
+.showVideoBackground {
+  animation: vidBgOpa 3.45s ease forwards;
+}
+@keyframes vidBgOpa {
+  0% {opacity: 0}
+  50% {opacity: 0}
+  100% {opacity: 100}
+}
 </style>

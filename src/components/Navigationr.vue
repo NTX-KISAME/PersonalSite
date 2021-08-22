@@ -16,7 +16,7 @@
       <div class="navbar-end">
         <div class="navbar-item button_Hover">
           <!-- Home -->
-          <router-link class="is-flex" to="/">
+          <router-link class="is-flex has-text-white" to="/">
             <div class="mb-2">
               <i class="fas fa-home"></i>
             </div>
@@ -25,7 +25,7 @@
         </div>
         <div class="navbar-item button_Hover">
           <!-- About -->
-          <router-link class="is-flex" to="/about">
+          <router-link class="is-flex has-text-white" to="/about">
             <div class="mb-2">
               <i class="fas fa-address-card"></i>
             </div>
@@ -34,7 +34,7 @@
         </div>
         <div class="navbar-item button_Hover">
           <!-- Projects -->
-          <router-link class="is-flex" to="/project">
+          <router-link class="is-flex has-text-white" to="/project">
             <div class="mb-2">
               <i class="fas fa-project-diagram"></i>
             </div>
@@ -43,7 +43,7 @@
         </div>
         <div class="navbar-item button_Hover">
           <!-- Repository -->
-          <router-link class="is-flex" to="/repository">
+          <router-link class="is-flex has-text-white" to="/repository">
             <div class="mb-2">
               <i class="fas fa-book"></i>
             </div>
