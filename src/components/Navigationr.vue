@@ -5,7 +5,7 @@
       <!-- Site Name -->
       <div class="navbar-brand">
         <div class="navbar-item">
-          <h1 class="has-text-weight-bold is-uppercase">Natsu-X</h1>
+          <h1 class="has-text-weight-bold is-uppercase" style="font-size: 24px" >Natsu-X</h1>
         </div>
       </div>
       <!-- Site Menu -->

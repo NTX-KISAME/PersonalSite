@@ -24,17 +24,20 @@
     </div>
   </div>
 </div>
+<webFooter/>
 </template>
 
 <script>
 // @ is an alias to /src
 import anime from 'animejs'
 import Navigationr from '@/components/Navigationr'
+import webFooter from '@/components/webFooter'
 
 export default {
   name: 'Home',
   components: {
-    Navigationr
+    Navigationr,
+    webFooter
   },
   mounted () {
     anime({
