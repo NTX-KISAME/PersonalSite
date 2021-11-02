@@ -1,5 +1,8 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
 /* Custom Variables */
-@import "./custom";
+$primary: #d5d4d4;
+$family-primary: 'Zen Maru Gothic', sans-serif;
 
 /* Bulma */
 @import "~bulma/bulma";
