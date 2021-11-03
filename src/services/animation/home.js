@@ -26,6 +26,7 @@ export default {
   /* Shape Animation (In) */
   // Blue Circle
   shape1In (element) {
+    element.hidden = false
     anime({
       targets: element,
       left: 16.25 + 'rem',
@@ -35,6 +36,7 @@ export default {
   },
   // Green Circle
   shape2In (element) {
+    element.hidden = false
     anime({
       targets: element,
       left: 8.25 + 'rem',
@@ -45,6 +47,7 @@ export default {
   },
   // Line Blue
   shape3In (element) {
+    element.hidden = false
     anime({
       targets: element,
       right: -2.50 + 'rem',
@@ -54,6 +57,7 @@ export default {
   },
   // Line Green
   shape4In (element) {
+    element.hidden = false
     anime({
       targets: element,
       right: -6.50 + 'rem',
@@ -64,6 +68,7 @@ export default {
   },
   // Line Yellow
   shape5In (element) {
+    element.hidden = false
     anime({
       targets: element,
       right: -10.50 + 'rem',
@@ -74,6 +79,7 @@ export default {
   },
   // Square Blue
   shape6In (element) {
+    element.hidden = false
     anime({
       targets: element,
       right: 7.25 + 'rem',
@@ -83,6 +89,7 @@ export default {
   },
   // Square Purple
   shape7In (element) {
+    element.hidden = false
     anime({
       targets: element,
       right: 16.25 + 'rem',
@@ -93,6 +100,7 @@ export default {
   },
   // Triangle Green
   shape8In (element) {
+    element.hidden = false
     anime({
       targets: element,
       left: 8.55 + 'rem',
@@ -103,6 +111,7 @@ export default {
   },
   // triangle Pink
   shape9In (element) {
+    element.hidden = false
     anime({
       targets: element,
       left: 15.55 + 'rem',
@@ -119,7 +128,10 @@ export default {
       targets: element,
       left: -116.25 + 'rem',
       duration: 650,
-      easing: 'easeInExpo'
+      easing: 'easeInExpo',
+      complete: function () {
+        element.hidden = true
+      }
     })
   },
   // Green Circle
@@ -129,7 +141,10 @@ export default {
       left: -118.25 + 'rem',
       duration: 650,
       delay: 120,
-      easing: 'easeInExpo'
+      easing: 'easeInExpo',
+      complete: function () {
+        element.hidden = true
+      }
     })
   },
   // Line Blue
@@ -138,7 +153,10 @@ export default {
       targets: element,
       right: -112.50 + 'rem',
       duration: 650,
-      easing: 'easeInExpo'
+      easing: 'easeInExpo',
+      complete: function () {
+        element.hidden = true
+      }
     })
   },
   // Line Green
@@ -148,7 +166,10 @@ export default {
       right: -116.50 + 'rem',
       duration: 650,
       delay: 120,
-      easing: 'easeInExpo'
+      easing: 'easeInExpo',
+      complete: function () {
+        element.hidden = true
+      }
     })
   },
   // Line Yellow
@@ -158,7 +179,10 @@ export default {
       right: -110.50 + 'rem',
       duration: 650,
       delay: 180,
-      easing: 'easeInExpo'
+      easing: 'easeInExpo',
+      complete: function () {
+        element.hidden = true
+      }
     })
   },
   // Square Blue
@@ -167,7 +191,10 @@ export default {
       targets: element,
       right: -117.25 + 'rem',
       duration: 650,
-      easing: 'easeInExpo'
+      easing: 'easeInExpo',
+      complete: function () {
+        element.hidden = true
+      }
     })
   },
   // Square Purple
@@ -177,7 +204,10 @@ export default {
       right: -116.25 + 'rem',
       duration: 650,
       delay: 120,
-      easing: 'easeInExpo'
+      easing: 'easeInExpo',
+      complete: function () {
+        element.hidden = true
+      }
     })
   },
   // Triangle Green
@@ -187,7 +217,10 @@ export default {
       left: -118.55 + 'rem',
       rotate: 180,
       duration: 650,
-      easing: 'easeInExpo'
+      easing: 'easeInExpo',
+      complete: function () {
+        element.hidden = true
+      }
     })
   },
   // triangle Pink
@@ -198,7 +231,10 @@ export default {
       rotate: 180,
       duration: 650,
       delay: 120,
-      easing: 'easeInExpo'
+      easing: 'easeInExpo',
+      complete: function () {
+        element.hidden = true
+      }
     })
   }
 }

@@ -6,18 +6,23 @@
   </div>
   <!-- Background Stuff -->
   <div class="hero-video is-transparent" id="bg-container" ref="bg-containers">
-    <img src="../assets/bgimg/welcome_bg.png" alt="welome_bg" class="bgimage" ref="bgimages">
+    <img src="../assets/bgimg/welcome_bg.jpg" alt="welome_bg" class="bgimage" ref="bgimages">
+  </div>
+  <!-- Background Only visible on Mobile View -->
+  <div class="bg-mobile-wrap">
+    <img src="../assets/bgimg/welcome_m.jpg" id="bg-mobile" alt="mobile_bg">
+    <div id="gradient-m"></div>
   </div>
   <!-- Background Shape -->
-  <img src="../assets/shape/home/Circle_Blue.png" id="shape1" alt="Circle_blue" ref="shape1">
-  <img src="../assets/shape/home/Circle_Green.png" id="shape2" alt="Circle_Green" ref="shape2">
-  <img src="../assets/shape/home/Line_blue.png" id="shape3" alt="Line_blue" ref="shape3">
-  <img src="../assets/shape/home/Line_Green.png" id="shape4" alt="Line_Green" ref="shape4">
-  <img src="../assets/shape/home/Line_Yellow.png" id="shape5" alt="Line_Yellow" ref="shape5">
-  <img src="../assets/shape/home/Square_Blue.png" id="shape6" alt="Square_Blue" ref="shape6">
-  <img src="../assets/shape/home/Square_Purple.png" id="shape7" alt="Square_Purple" ref="shape7">
-  <img src="../assets/shape/home/Triangel_Green.png" id="shape8" alt="Triangel_Green" ref="shape8">
-  <img src="../assets/shape/home/Triangel_Pink.png" id="shape9" alt="Triangel_Pink" ref="shape9">
+  <img src="../assets/shape/home/Circle_Blue.png" id="shape1" alt="Circle_blue" ref="shape1" hidden>
+  <img src="../assets/shape/home/Circle_Green.png" id="shape2" alt="Circle_Green" ref="shape2" hidden>
+  <img src="../assets/shape/home/Line_blue.png" id="shape3" alt="Line_blue" ref="shape3" hidden>
+  <img src="../assets/shape/home/Line_Green.png" id="shape4" alt="Line_Green" ref="shape4" hidden>
+  <img src="../assets/shape/home/Line_Yellow.png" id="shape5" alt="Line_Yellow" ref="shape5" hidden>
+  <img src="../assets/shape/home/Square_Blue.png" id="shape6" alt="Square_Blue" ref="shape6" hidden>
+  <img src="../assets/shape/home/Square_Purple.png" id="shape7" alt="Square_Purple" ref="shape7" hidden>
+  <img src="../assets/shape/home/Triangel_Green.png" id="shape8" alt="Triangel_Green" ref="shape8" hidden>
+  <img src="../assets/shape/home/Triangel_Pink.png" id="shape9" alt="Triangel_Pink" ref="shape9" hidden>
   <!-- Main Stuff -->
   <div class="hero-body">
     <div class="container">
@@ -29,6 +34,8 @@
           </div>
           <!-- Button -->
           <router-link to="/about" @mouseenter="bgEffectIn()" @mouseout="bgEffectOut()" class="button is-white is-outlined is-uppercase has-text-weight-semibold" id="readmore-btn">Read More</router-link>
+          <!-- Button for Mobile View -->
+          <router-link to="/about" class="button is-white is-outlined is-uppercase has-text-weight-semibold" id="readmore-btn-mobile">Read More</router-link>
         </div>
       </div>
     </div>
@@ -55,18 +62,6 @@ export default {
   methods: {
     bgEffectIn () {
       home.bgEffectIn(this.$refs['bg-containers'])
-      // Remove Hidden Attribute from Shape
-      /*  Well if i Write Like This your eyes gonna bleeding
-      this.$refs.shape1.removeAttribute('hidden')
-      this.$refs.shape2.removeAttribute('hidden')
-      this.$refs.shape3.removeAttribute('hidden')
-      this.$refs.shape4.removeAttribute('hidden')
-      this.$refs.shape5.removeAttribute('hidden')
-      this.$refs.shape6.removeAttribute('hidden')
-      this.$refs.shape7.removeAttribute('hidden')
-      this.$refs.shape8.removeAttribute('hidden')
-      this.$refs.shape9.removeAttribute('hidden')
-       */
 
       // Maybe I Gonna Simplified this later
       home.shape1In(this.$refs.shape1)
@@ -97,6 +92,43 @@ export default {
 }
 </script>
 <style>
+#gradient-m {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 25%, rgba(222,0,255,0) 100%);
+}
+.bg-mobile-wrap {
+  opacity: 1;
+  animation: bgOpacity-mobile 1.5s ease;
+}
+
+@media screen and (min-width:1024px) {
+  .bg-mobile-wrap {
+    display: none;
+  }
+}
+@media screen and (min-width:1024px) {
+  #readmore-btn-mobile {
+    display: none;
+  }
+}
+@media screen and (max-width:1024px) {
+  #readmore-btn {
+    display: none;
+  }
+}
+@keyframes bgOpacity-mobile {
+  0% {opacity: 0.0}
+  50% {opacity: 0.0}
+  100% {opacity: 1.0}
+}
+
+#bg-mobile {
+  position: absolute;
+}
+
 .bgimage {
   margin-top: -10%;
 }
@@ -116,6 +148,14 @@ export default {
 }
 #readmore-btn {
   animation: buttonIn 1.2s ease;
+}
+#readmore-btn-mobile {
+  animation: buttonIn 1.2s ease;
+}
+#readmore-btn-mobile:hover {
+  box-shadow: 0 0 31px -7px rgba(255,255,255,0.75);
+  -webkit-box-shadow: 0 0 31px -7px rgba(255,255,255,0.75);
+  -moz-box-shadow: 0 0 31px -7px rgba(255,255,255,0.75);
 }
 @keyframes buttonIn {
   0% {
@@ -146,7 +186,7 @@ export default {
   left: -80.25rem;
   width: 50px;
   height: 50px;
-  filter: drop-shadow(0 0 10px rgba(16, 128, 198, 0.75));
+  filter: drop-shadow(0 0 10px #13E794FF);
 }
 #shape3 {
   position: absolute;
@@ -203,5 +243,11 @@ export default {
   width: 55px;
   height: 55px;
   filter: drop-shadow(0 0 10px #CF0DE7E8);
+}
+
+@media screen and (min-width:1024px){
+  #bg-mobile {
+    display: none;
+  }
 }
 </style>
