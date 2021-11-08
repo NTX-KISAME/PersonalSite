@@ -24,7 +24,7 @@
   <img src="../assets/shape/home/Triangel_Green.png" id="shape8" alt="Triangel_Green" ref="shape8" hidden>
   <img src="../assets/shape/home/Triangel_Pink.png" id="shape9" alt="Triangel_Pink" ref="shape9" hidden>
   <!-- Main Stuff -->
-  <div class="hero-body">
+  <section class="hero-body">
     <div class="container">
       <div class="columns is-vcentered">
         <div class="column has-text-centered">
@@ -39,7 +39,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 <webFooter/>
 </template>

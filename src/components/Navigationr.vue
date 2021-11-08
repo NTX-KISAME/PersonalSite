@@ -100,7 +100,7 @@ export default {
           targets: this.$refs.navbar_m_menu,
           right: 0 + 'rem',
           duration: 650,
-          easing: 'easeOutExpo'
+          easing: 'easeOutQuart'
         })
       } else {
         this.$refs.menu_btn_m.classList.remove('is-active')
@@ -108,7 +108,7 @@ export default {
           targets: this.$refs.navbar_m_menu,
           right: -100 + 'rem',
           duration: 650,
-          easing: 'easeInExpo',
+          easing: 'easeInQuart',
           complete: () => {
             this.$refs.navbar_m_menu.hidden = true
           }

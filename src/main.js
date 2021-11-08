@@ -4,4 +4,4 @@ import './registerServiceWorker'
 import router from './router'
 import './scss/main.scss'
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).mount('#NTXkiana')
